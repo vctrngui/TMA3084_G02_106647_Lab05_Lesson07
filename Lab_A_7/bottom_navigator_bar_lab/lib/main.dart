@@ -52,7 +52,8 @@ class BottomNavLab extends StatelessWidget {
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
       ),
-      body: const _TabBody(),
+
+      body: const Center(child: _TabBody()),
       bottomNavigationBar: const _BottomBar(),
     );
   }
@@ -88,6 +89,27 @@ class _BottomBar extends StatelessWidget {
         BottomNavigationBarItem(icon: Icon(Icons.business), label: 'Business'),
         BottomNavigationBarItem(icon: Icon(Icons.school), label: 'School'),
       ],
+=======
+      body: Center(child: screens[currentIndex]),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        fixedColor: Colors.white,
+        backgroundColor: Colors.blue,
+        iconSize: 30,
+        currentIndex: currentIndex,
+        onTap: (int index) {
+          setState(() {
+            currentIndex = index;
+          });
+        },
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.alarm), label: 'Alarm'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.business), label: 'Business'),
+          BottomNavigationBarItem(icon: Icon(Icons.school), label: 'School'),
+        ],
+      ),
     );
   }
 }
