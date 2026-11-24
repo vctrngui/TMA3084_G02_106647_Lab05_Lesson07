@@ -43,7 +43,7 @@ class _BottomNavLabState extends State<BottomNavLab> {
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
       ),
-      body: screens[currentIndex],
+      body: Center(child: screens[currentIndex]),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         fixedColor: Colors.white,
